@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+    @{} -> Razor Code Block
+*@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <div>
+            <h1>View Index.cshtml do controller TesteController</h1>
+        </div>
+        <!-- Forma sem passar pelo Model
+        <b>Nome:</b> @ViewData["Nome"] <br />
+        <b>Email:</b> @ViewData["Email"]<br />
+        <b>Curso:</b> @ViewData["Curso"]<br />
+        <b>Data Inicio:</b> @ViewData["DataInicio"]<br />
+        -->
+       @*  <b>Nome:</b> @ViewBag.Nome <br />
+        <b>Email:</b> @ViewBag.Email<br />
+        <b>Curso:</b> @ViewBag.Curso<br />
+        <b>Data Inicio:</b> @ViewBag.DataInicio<br /> *@
+
+        <div>
+            @* <ul>
+                @foreach (string strPaises in ViewBag.Paises)
+                {
+                    <li>@strPaises</li>
+                }
+            </ul> *@
+
+            <ul>
+                @foreach(string srPaises in (List<string>)ViewData["Paises"])
+                {
+                    <li>@srPaises</li>
+                }
+            </ul>
+
+        </div>
+    </body>
+</html>
